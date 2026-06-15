@@ -1,9 +1,11 @@
 from flask import Flask
+from flask_cors import CORS
 
 from calculator import Calculator
 from endpoints import CalculatorEndpoints
 
 app = Flask(__name__)
+CORS(app)
 
 CalculatorEndpoints(app, Calculator())
 
